@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ROOMS } from "../guesthouseData";
+import { ROOMS, PROPERTY_INFO } from "../guesthouseData";
 
 export default function SuitesPage() {
   return (
@@ -45,7 +45,7 @@ export default function SuitesPage() {
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 border border-black/5 shadow-sm">
                     <div className="flex items-center gap-1">
                       <Star className="h-3 w-3 text-luxury-gold fill-luxury-gold" />
-                      <span className="text-xs font-bold">5.0</span>
+                      <span className="text-xs font-bold">{PROPERTY_INFO.rating.toFixed(1)}</span>
                     </div>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

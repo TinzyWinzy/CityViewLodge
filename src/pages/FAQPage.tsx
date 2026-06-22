@@ -87,7 +87,7 @@ export default function FAQPage() {
             </div>
             <div>
               <h3 className="font-serif text-base font-medium text-luxury-charcoal mb-2">Check-in / Check-out</h3>
-              <p>Standard check-in is from 14:00. Standard check-out is by 10:00. Early check-in and late check-out are available upon request and subject to availability.</p>
+              <p>Standard check-in is from 14:00. Standard check-out is by 11:00. Early check-in and late check-out are available upon request and subject to availability.</p>
             </div>
             <div>
               <h3 className="font-serif text-base font-medium text-luxury-charcoal mb-2">Cancellation</h3>

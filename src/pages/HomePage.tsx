@@ -307,6 +307,9 @@ export default function HomePage() {
                     {amenity.iconName === "Wifi" && <Wifi size={20} />}
                     {amenity.iconName === "Car" && <Car size={20} />}
                     {amenity.iconName === "Coffee" && <Coffee size={20} />}
+                    {amenity.iconName === "Sparkles" && <Sparkles size={20} />}
+                    {amenity.iconName === "Clock" && <Clock size={20} />}
+                    {amenity.iconName === "MapPin" && <MapPin size={20} />}
                   </div>
                   <div>
                     <h4 className="font-serif text-sm font-medium text-luxury-charcoal">{amenity.name}</h4>

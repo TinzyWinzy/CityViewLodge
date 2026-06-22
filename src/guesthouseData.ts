@@ -230,37 +230,102 @@ export const GENERAL_AMENITIES: Amenity[] = [
   },
   {
     id: "breakfast",
-    name: "Bespoke Complimentary Breakfast",
+    name: "Continental Breakfast Available",
     category: "Comfort",
     iconName: "Coffee",
-    description: "Artisanal coffee, continental spreads, and freshly baked pastries."
+    description: "Artisanal coffee, continental spreads, and fresh pastries (extra charge)."
+  },
+  {
+    id: "laundry",
+    name: "Full-Service Laundry",
+    category: "General",
+    iconName: "Sparkles",
+    description: "Daily housekeeping with full-service and self-service laundry options."
+  },
+  {
+    id: "pets",
+    name: "Pet-Friendly Accommodation",
+    category: "Comfort",
+    iconName: "ShieldCheck",
+    description: "Dogs and cats welcome (extra charge). Your furry friends stay too."
+  },
+  {
+    id: "reception",
+    name: "24-Hour Front Desk",
+    category: "General",
+    iconName: "Clock",
+    description: "Baggage storage, grocery shop, and always-on concierge assistance."
+  },
+  {
+    id: "accessible",
+    name: "Accessible Parking & Entry",
+    category: "General",
+    iconName: "MapPin",
+    description: "Accessible parking spaces and ground-floor rooms available."
   }
 ];
+
+export const PROPERTY_INFO = {
+  rating: 4.4,
+  reviewCount: 40,
+  host: "Holyfield (Mr H. Moyo)",
+  checkIn: "14:00",
+  checkOut: "11:00",
+  address: "20 Sandhurst Way, Braeside, Harare, Zimbabwe",
+  phone: "+263 78 009 6836",
+  email: "stay@cityviewguesthouse.co.zw",
+  languages: ["English"],
+  payment: ["Cash", "EcoCash", "Bank Transfer"],
+};
 
 export const REVIEWS: Review[] = [
   {
     id: "rev-1",
-    author: "Elena de Wet",
-    location: "Cape Town, South Africa",
+    author: "Trevor Brooklyn",
+    location: "Harare, Zimbabwe",
     rating: 5,
-    text: "City View Guest House is an absolute oasis! The solar and borehole system means complete comfort without all the power and water cuts other properties face. Sleek, minimalist design, and the garden is stunning.",
-    date: "June 2026"
+    text: "Smart and affordable. The rooms are well kept, the service is excellent, and the location in Braeside is quiet and peaceful. Highly recommended for anyone visiting Harare.",
+    date: "March 2026"
   },
   {
     id: "rev-2",
-    author: "Tinashe Makoni",
-    location: "London, UK (Diaspora Visitor)",
+    author: "Evangelist Lauras Basinskas",
+    location: "Harare, Zimbabwe",
     rating: 5,
-    text: "Top tier hospitality in Harare. The Braeside location is beautifully quiet and central. Walking into the Deluxe Suites is like entering a high-end Cape Town boutique hotel. Highly recommended for business trips.",
-    date: "May 2026"
+    text: "Simple, clean, friendly, safe and affordable. Everything you need for a comfortable stay in Harare. The host Holyfield goes above and beyond to make sure guests are well taken care of.",
+    date: "October 2025"
   },
   {
     id: "rev-3",
-    author: "Dr. Jean-Pierre",
-    location: "Geneva, Switzerland",
+    author: "Brian Mahove",
+    location: "Harare, Zimbabwe",
     rating: 5,
-    text: "Impeccably clean, high-speed wifi is incredibly fast and reliable, and 100% secure. The attention to detail in the minimalist interior design surpasses standard Harare hotels. Will stay here every year.",
-    date: "April 2026"
+    text: "This place is beautiful. Excellent service! Definite must go place in Harare. Stunning view, extremely well maintained. The attention to detail and the peaceful environment make it a true gem in Braeside.",
+    date: "August 2024"
+  },
+  {
+    id: "rev-4",
+    author: "Sharon Wendy",
+    location: "Harare, Zimbabwe",
+    rating: 4,
+    text: "Its a very neat African'ny place, its really a breather. Its so near to town, but out of it — so quiet. They designed the place with so much art you could just immerse in it while being outside.",
+    date: "June 2024"
+  },
+  {
+    id: "rev-5",
+    author: "Bobby Jackson",
+    location: "Harare, Zimbabwe",
+    rating: 5,
+    text: "Never been treated better, felt like I was at my grandma's house, spoilt. Had my room cleaned on demand, my car wiped down daily, my visitors were treated like royalty. If you ever need a place to rest better than home, this is it.",
+    date: "March 2023"
+  },
+  {
+    id: "rev-6",
+    author: "Western Cape Explorer",
+    location: "Cape Town, South Africa",
+    rating: 5,
+    text: "Beautiful view of the Harare CBD. Quiet neighbourhood. The host Holyfield provided excellent service throughout our stay. A wonderful home away from home experience in a secure, peaceful setting.",
+    date: "January 2024"
   }
 ];
 

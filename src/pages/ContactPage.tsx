@@ -92,7 +92,7 @@ export default function ContactPage() {
                 <h4 className="font-serif text-sm font-medium text-luxury-charcoal mb-3">Check-in / Check-out</h4>
                 <div className="font-mono text-[11px] text-luxury-slate/90 space-y-1">
                   <p><span className="text-luxury-gold">Check-in:</span> 14:00 (Flexible upon request)</p>
-                  <p><span className="text-luxury-gold">Check-out:</span> 10:00 (Late check-out available)</p>
+                  <p><span className="text-luxury-gold">Check-out:</span> 11:00 (Late check-out available)</p>
                 </div>
               </div>
             </div>
