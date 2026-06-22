@@ -1,0 +1,6 @@
+{
+  "name": "City View Guest House",
+  "description": "A high-conversion luxury boutique guest house website for City View Guest House in Braeside, Harare, featuring a dynamic WhatsApp booking engine, visual showcase, and elegant minimalist design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
