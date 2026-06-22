@@ -29,6 +29,10 @@ import { motion, AnimatePresence } from "motion/react";
 import { ROOMS, LIFESTYLE_FEATURES, GENERAL_AMENITIES, REVIEWS, LOCAL_SEO_KEYWORDS, IMAGES } from "./guesthouseData";
 import { generateWhatsAppLink } from "./whatsappUtility";
 import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
+import Hero from "./components/Hero";
+import GallerySection from "./components/GallerySection";
+import LifestyleFeatures from "./components/LifestyleFeatures";
+import LocationMap from "./components/LocationMap";
 
 export default function App() {
   // Navigation / Filter States
@@ -184,73 +188,145 @@ export default function App() {
       </header>
 
       {/* HERO SECTION: ATMOSPHERIC DENSE LUXURY */}
-      <section className="relative w-full h-[85vh] lg:h-[90vh] bg-luxury-charcoal overflow-hidden flex items-center justify-center py-20 px-6">
-        {/* Background Overlay */}
-        <div className="absolute inset-0 bg-[#121413]/40 z-10" />
-        
-        {/* High-Performance Generated Image */}
-        <img
-          src={IMAGES.hero}
-          alt="Atmospheric editorial architecture of City View Guest House"
-          referrerPolicy="no-referrer"
-          className="absolute inset-0 w-full h-full object-cover object-center transform scale-102 hover:scale-105 transition-transform duration-[6000ms] ease-out select-none"
-        />
+      <Hero />
 
-        {/* Content Centered on White & Gold Typography */}
-        <div className="relative z-20 max-w-4xl text-center flex flex-col items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20"
-          >
-            <Sparkles size={12} className="text-luxury-gold animate-pulse" />
-            <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#FCFAF6] font-light">
-              Boutique Hospitality in Harare, Zimbabwe
-            </span>
-          </motion.div>
+      {/* BOOKING ENGINE DRAFTING HUB */}
+      <section ref={bookingFormRef} className="relative py-12 lg:py-20 px-6 lg:px-16 -mt-16 z-30 max-w-6xl mx-auto">
+        <div className="bg-white border border-luxury-border shadow-xl p-8 sm:p-12">
+          <div className="flex flex-col lg:flex-row gap-8 items-start lg:items-center justify-between border-b border-luxury-border pb-8 mb-8">
+            <div>
+              <span className="text-[10px] uppercase font-mono tracking-widest text-luxury-gold font-bold block mb-1">
+                Active Reservation Portal
+              </span>
+              <h2 className="font-serif text-3xl font-medium tracking-tight">
+                Pre-Draft Your Harare Stay
+              </h2>
+              <p className="text-xs text-luxury-slate/70 font-light mt-1 max-w-lg">
+                Enter your desired dates. The dynamic booking generator will compile your inquiry and securely deliver it to our booking desk via WhatsApp.
+              </p>
+            </div>
+            <div className="bg-luxury-sand border border-luxury-border px-5 py-3 flex items-center gap-3">
+              <CalendarDays className="text-luxury-gold shrink-0" size={18} />
+              <div className="text-[11px] font-mono tracking-wide text-luxury-charcoal/80">
+                <span className="font-bold text-luxury-gold">FREE BOREHOLE WATER</span> & ELECTRIC SHUTTLE
+              </div>
+            </div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.1 }}
-            className="font-serif text-4xl sm:text-5xl md:text-6xl text-white font-medium tracking-tight leading-[1.1] max-w-3xl"
-          >
-            A Sanctuary of Quiet luxury in <span className="italic font-light text-luxury-gold">Braeside</span>
-          </motion.h1>
+          <form onSubmit={submitBookingRequest} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+              
+              {/* Suite Selection */}
+              <div className="flex flex-col">
+                <label className="text-[10px] uppercase font-mono tracking-[0.15em] text-[#A69177] font-semibold mb-2 flex items-center gap-1">
+                  <SlidersHorizontal size={12} /> Select Suite or Room
+                </label>
+                <div className="relative">
+                  <select
+                    value={selectedRoom}
+                    onChange={(e) => setSelectedRoom(e.target.value)}
+                    className="w-full h-12 bg-[#F5F2EF] border border-[#F0EBE6] focus:border-luxury-gold px-4 text-xs font-mono rounded-none outline-none appearance-none cursor-pointer text-luxury-charcoal"
+                  >
+                    {ROOMS.map((room) => (
+                      <option key={room.id} value={room.name}>
+                        {room.name} ({room.rate})
+                      </option>
+                    ))}
+                  </select>
+                  <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-luxury-gold text-xs">
+                    ▼
+                  </div>
+                </div>
+              </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="mt-6 text-sm sm:text-base text-luxury-cream/80 font-light max-w-xl font-sans tracking-wide leading-relaxed"
-          >
-            Where premium security meets continuous solar power. Experience the pristine quiet of our boutique gardens, only 10 minutes from central Harare.
-          </motion.p>
+              {/* Check-In Date */}
+              <div className="flex flex-col">
+                <label className="text-[10px] uppercase font-mono tracking-[0.15em] text-[#A69177] font-semibold mb-2 flex items-center gap-1">
+                  <Calendar size={12} /> Check-In
+                </label>
+                <input
+                  type="date"
+                  required
+                  value={checkIn}
+                  min={new Date().toISOString().split("T")[0]}
+                  onChange={(e) => setCheckIn(e.target.value)}
+                  className="w-full h-12 bg-[#F5F2EF] border border-[#F0EBE6] focus:border-luxury-gold px-4 text-xs font-mono rounded-none outline-none cursor-pointer text-luxury-charcoal"
+                />
+              </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.3 }}
-            className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full justify-center"
-          >
-            <button
-              onClick={() => scrollToSection(bookingFormRef)}
-              className="w-full sm:w-auto px-8 py-4 bg-luxury-gold hover:bg-white text-white hover:text-luxury-charcoal transition-all duration-300 font-mono uppercase text-[11px] tracking-widest font-semibold border border-luxury-gold hover:border-white shadow-lg cursor-pointer"
-            >
-              Book Your Suite
-            </button>
-            <button
-              onClick={() => scrollToSection(suitesRef)}
-              className="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-white/10 text-[#FCFAF6] font-mono uppercase text-[11px] tracking-widest font-semibold border border-white/40 hover:border-white transition-all cursor-pointer"
-            >
-              Explore our Rooms
-            </button>
-          </motion.div>
+              {/* Check-Out Date */}
+              <div className="flex flex-col">
+                <label className="text-[10px] uppercase font-mono tracking-[0.15em] text-[#A69177] font-semibold mb-2 flex items-center gap-1">
+                  <Calendar size={12} /> Check-Out
+                </label>
+                <input
+                  type="date"
+                  required
+                  value={checkOut}
+                  min={checkIn ? checkIn : new Date().toISOString().split("T")[0]}
+                  onChange={(e) => setCheckOut(e.target.value)}
+                  className="w-full h-12 bg-[#F5F2EF] border border-[#F0EBE6] focus:border-luxury-gold px-4 text-xs font-mono rounded-none outline-none cursor-pointer text-luxury-charcoal"
+                />
+              </div>
+
+              {/* Guests Count */}
+              <div className="flex flex-col">
+                <label className="text-[10px] uppercase font-mono tracking-[0.15em] text-[#A69177] font-semibold mb-2 flex items-center gap-1">
+                  <Users size={12} /> Accompanied Guests
+                </label>
+                <div className="relative">
+                  <select
+                    value={guests}
+                    onChange={(e) => setGuests(parseInt(e.target.value))}
+                    className="w-full h-12 bg-[#F5F2EF] border border-[#F0EBE6] focus:border-luxury-gold px-4 text-xs font-mono rounded-none outline-none appearance-none cursor-pointer text-luxury-charcoal"
+                  >
+                    <option value={1}>1 Adult</option>
+                    <option value={2}>2 Adults</option>
+                    <option value={3}>3 Adults (Executive Lounge Ext)</option>
+                  </select>
+                  <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-luxury-gold text-xs">
+                    ▼
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Special Request Optional Field */}
+            <div className="flex flex-col">
+              <label className="text-[10px] uppercase font-mono tracking-[0.15em] text-[#A69177] font-semibold mb-2">
+                Special Requests or Airport Pickup Arrangements (Optional)
+              </label>
+              <input
+                type="text"
+                placeholder="e.g. Harare Int Airport Shuttle, vegetarian breakfast package, early check-in inquiry..."
+                value={customRequest}
+                onChange={(e) => setCustomRequest(e.target.value)}
+                className="w-full h-12 bg-[#F5F2EF] border border-[#F0EBE6] focus:border-luxury-gold px-4 text-xs rounded-none outline-none text-luxury-charcoal"
+              />
+            </div>
+
+            {/* Dynamic preview block */}
+            <div className="p-4 bg-luxury-cream border-l-2 border-luxury-gold text-[11px] font-mono leading-relaxed border-t border-b border-r border-[#F0EBE6]">
+              <span className="font-bold text-luxury-gold uppercase block mb-1">WhatsApp Draft Message Preview:</span>
+              <p className="text-luxury-slate italic">
+                "Hello City View Guest House, I am interested in booking the *{selectedRoom}*. 
+                {checkIn && <> Check-in: *{checkIn}*, Check-out: *{checkOut}*, Guests: *{guests}*.</>}
+                {customRequest && <> Special request: *{customRequest}*.</>} Could you please check dates?"
+              </p>
+            </div>
+
+            {/* Submission triggers dynamic WhatsApp redirect */}
+            <div className="flex justify-end">
+              <button
+                type="submit"
+                className="w-full lg:w-auto px-10 py-4 bg-[#25D366] hover:bg-[#128C7E] text-white font-mono font-bold uppercase text-[11px] tracking-widest transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-emerald-200"
+              >
+                Draft on WhatsApp Booking Desk &rarr;
+              </button>
+            </div>
+          </form>
         </div>
-
-        {/* Ambient bottom gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-luxury-cream to-transparent z-10" />
       </section>
 
       {/* BOOKING ENGINE DRAFTING HUB */}
@@ -804,6 +880,12 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* LIFESTYLE FEATURES SECTION */}
+      <LifestyleFeatures />
+
+      {/* LOCATION & MAP SECTION */}
+      <LocationMap />
 
       {/* FAQ ACCORDION SECTION */}
       <section className="py-20 bg-luxury-cream px-6 lg:px-16 border-t border-[#F0EBE6]">
