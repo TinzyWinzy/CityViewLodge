@@ -4,25 +4,25 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const heroImages = [
   {
-    src: "/src/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg",
+    src: "/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg",
     alt: "City View Guest House exterior facade",
     title: "Welcome to City View Guest House",
     description: "Luxury boutique accommodation in Braeside, Harare"
   },
   {
-    src: "/src/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg",
+    src: "/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg",
     alt: "City View Guest House garden and patio",
     title: "Garden Retreat",
     description: "Peaceful outdoor space for relaxation"
   },
   {
-    src: "/src/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",
+    src: "/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",
     alt: "City View Guest House deluxe garden suite",
     title: "Deluxe Garden Suite",
     description: "Spacious room with private garden views"
   },
   {
-    src: "/src/assets/images/property/480430306_601771529275485_4476888978896392227_n.jpg",
+    src: "/assets/images/property/480430306_601771529275485_4476888978896392227_n.jpg",
     alt: "City View Guest House cozy double/twin room",
     title: "Cozy Double / Twin Room",
     description: "Comfortable and flexible accommodation"

@@ -35,10 +35,10 @@ export interface Review {
 
 // Property photography — real photos of City View Guest House
 export const IMAGES = {
-  hero: "/src/assets/images/property/Hero.jpg",
-  roomDeluxe: "/src/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",
-  roomMaster: "/src/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg",
-  roomTwin: "/src/assets/images/property/480430306_601771529275485_4476888978896392227_n.jpg",
+  hero: "/assets/images/property/Hero.jpg",
+  roomDeluxe: "/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",
+  roomMaster: "/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg",
+  roomTwin: "/assets/images/property/480430306_601771529275485_4476888978896392227_n.jpg",
 };
 
 export const ROOMS: Room[] = [

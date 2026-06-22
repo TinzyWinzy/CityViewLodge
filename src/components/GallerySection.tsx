@@ -4,43 +4,43 @@ import { motion } from "motion/react";
 const galleryData = {
   indoor: [
     {
-      src: "/src/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg",
+      src: "/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg",
       title: "Master Executive Room",
       description: "The pinnacle of comfort for discerning executives with bespoke oak wood panelling and luxurious workspace.",
       span: "md:col-span-2 md:row-span-2"
     },
     {
-      src: "/src/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",
+      src: "/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",
       title: "Deluxe Garden Suite",
       description: "Sanctuary of peace, styled with custom finishes and private garden views.",
       span: "md:col-span-1 md:row-span-1"
     },
     {
-      src: "/src/assets/images/property/480430306_601771529275485_4476888978896392227_n.jpg",
+      src: "/assets/images/property/480430306_601771529275485_4476888978896392227_n.jpg",
       title: "Cozy Double / Twin Room",
       description: "Light-filled, serene, and exquisitely flexible for colleagues or family.",
       span: "md:col-span-1 md:row-span-1"
     },
     {
-      src: "/src/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg",
+      src: "/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg",
       title: "Premium Amenities",
       description: "Custom orthopedic linens, premium hardware, and beautiful garden vistas.",
       span: "md:col-span-1 md:row-span-2"
     },
     {
-      src: "/src/assets/images/property/494787926_658807510238553_2158675956903400196_n.jpg",
+      src: "/assets/images/property/494787926_658807510238553_2158675956903400196_n.jpg",
       title: "Integrated Lounge",
       description: "Dedicated lounge corner with Marshall Bluetooth Speaker.",
       span: "md:col-span-1 md:row-span-1"
     },
     {
-      src: "/src/assets/images/property/494475561_658807623571875_5750875893493548613_n.jpg",
+      src: "/assets/images/property/494475561_658807623571875_5750875893493548613_n.jpg",
       title: "Smart Workspace",
       description: "Integrated workspace with fiber WiFi and modern amenities.",
       span: "md:col-span-1 md:row-span-1"
     },
     {
-      src: "/src/assets/images/property/480197809_601771535942151_1459793074888622424_n.jpg",
+      src: "/assets/images/property/480197809_601771535942151_1459793074888622424_n.jpg",
       title: "Rain Shower",
       description: "Rain shower designed to soothe and refresh.",
       span: "md:col-span-1 md:row-span-1"
@@ -48,43 +48,43 @@ const galleryData = {
   ],
   outdoor: [
     {
-      src: "/src/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg",
+      src: "/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg",
       title: "Garden Retreat",
       description: "Peaceful outdoor space surrounded by boutique gardens.",
       span: "md:col-span-2 md:row-span-2"
     },
     {
-      src: "/src/assets/images/property/494696291_658807453571892_794067846801859362_n.jpg",
+      src: "/assets/images/property/494696291_658807453571892_794067846801859362_n.jpg",
       title: "Solar Infrastructure",
       description: "Powerful solar inverter systems guaranteeing zero power cuts.",
       span: "md:col-span-1 md:row-span-2"
     },
     {
-      src: "/src/assets/images/property/494644278_658807153571922_3810868783847758030_n.jpg",
+      src: "/assets/images/property/494644278_658807153571922_3810868783847758030_n.jpg",
       title: "Secure Perimeter",
       description: "Electric fencing, automated gates, and CCTV monitoring.",
       span: "md:col-span-2 md:row-span-1"
     },
     {
-      src: "/src/assets/images/property/494299425_658807570238547_6180186370053329533_n.jpg",
+      src: "/assets/images/property/494299425_658807570238547_6180186370053329533_n.jpg",
       title: "Borehole Water",
       description: "Purified continuous supply across all luxury en-suites.",
       span: "md:col-span-1 md:row-span-1"
     },
     {
-      src: "/src/assets/images/property/494724131_658807136905257_2111670750698127600_n.jpg",
+      src: "/assets/images/property/494724131_658807136905257_2111670750698127600_n.jpg",
       title: "Fiber WiFi",
       description: "Optimized for high-bandwidth business video conferencing.",
       span: "md:col-span-1 md:row-span-1"
     },
     {
-      src: "/src/assets/images/property/479700198_601771295942175_7609058518878752270_n.jpg",
+      src: "/assets/images/property/479700198_601771295942175_7609058518878752270_n.jpg",
       title: "Airport Shuttle",
       description: "Reliable private chauffeur coordination for Harare Int Airport.",
       span: "md:col-span-1 md:row-span-1"
     },
     {
-      src: "/src/assets/images/property/474983885_586759654110006_1062893083761206121_n.jpg",
+      src: "/assets/images/property/474983885_586759654110006_1062893083761206121_n.jpg",
       title: "Garden Details",
       description: "Beautiful garden vistas and serene surroundings.",
       span: "md:col-span-2 md:row-span-1"
