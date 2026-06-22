@@ -1,35 +1,49 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const heroImages = [
   {
-    src: "/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg",
+    src: "/assets/images/property/Hero.jpg",
     alt: "City View Guest House exterior facade",
     title: "Welcome to City View Guest House",
-    description: "Luxury boutique accommodation in Braeside, Harare"
+    description: "Affordable boutique accommodation in Braeside, Harare"
   },
   {
-    src: "/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg",
-    alt: "City View Guest House garden and patio",
-    title: "Garden Retreat",
-    description: "Peaceful outdoor space for relaxation"
+    src: "/assets/images/property/cityview.jpg",
+    alt: "City View Guest House building and entrance",
+    title: "Your Home Away From Home",
+    description: "Peaceful secure retreat in the heart of Braeside"
   },
   {
-    src: "/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",
-    alt: "City View Guest House deluxe garden suite",
-    title: "Deluxe Garden Suite",
-    description: "Spacious room with private garden views"
+    src: "/assets/images/property/outsideview.jpg",
+    alt: "City View Guest House exterior and garden",
+    title: "Quiet Residential Sanctuary",
+    description: "Beautiful garden surroundings with premium security"
   },
   {
-    src: "/assets/images/property/480430306_601771529275485_4476888978896392227_n.jpg",
-    alt: "City View Guest House cozy double/twin room",
-    title: "Cozy Double / Twin Room",
-    description: "Comfortable and flexible accommodation"
+    src: "/assets/images/property/outsideview2.jpg",
+    alt: "City View Guest House outdoor spaces",
+    title: "Outdoor Relaxation",
+    description: "Spacious grounds for rest and reflection"
+  },
+  {
+    src: "/assets/images/property/hero2.jpg",
+    alt: "City View Guest House room interior",
+    title: "Comfortable Living Spaces",
+    description: "Clean, modern rooms at affordable rates"
+  },
+  {
+    src: "/assets/images/property/hero3.jpg",
+    alt: "City View Guest House suite",
+    title: "Affordable Luxury",
+    description: "From $30 to $60 per night for every traveler"
   }
 ];
 
 export default function Hero() {
+  const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -99,7 +113,7 @@ export default function Hero() {
             className="flex items-center justify-center gap-2 mb-4"
           >
             <span className="text-luxury-gold font-mono text-xs uppercase tracking-wider">
-              Boutique Hospitality in Harare, Zimbabwe
+              Affordable Accommodation in Braeside, Harare
             </span>
           </motion.div>
 
@@ -109,7 +123,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-medium tracking-tight leading-[1.1] max-w-3xl mx-auto"
           >
-            A Sanctuary of Quiet luxury in <span className="italic font-light text-luxury-gold">Braeside</span>
+            Clean & Cozy Accommodation in <span className="italic font-light text-luxury-gold">Braeside</span>
           </motion.h1>
 
           <motion.p
@@ -118,7 +132,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-6 text-sm sm:text-base text-luxury-cream/80 font-light max-w-xl mx-auto leading-relaxed"
           >
-            Where premium security meets continuous solar power. Experience the pristine quiet of our boutique gardens, only 10 minutes from central Harare.
+            From $30 to $60 per night. Premium security, solar power, and borehole water — only 10 minutes from central Harare.
           </motion.p>
 
           <motion.div
@@ -128,16 +142,16 @@ export default function Hero() {
             className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full justify-center"
           >
             <button
-              onClick={() => document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto px-8 py-4 bg-luxury-gold hover:bg-white text-white hover:text-luxury-charcoal transition-all duration-300 font-mono uppercase text-[11px] tracking-widest font-semibold border border-luxury-gold hover:border-white shadow-lg cursor-pointer"
+              onClick={() => navigate('/')}
+              className="w-full sm:w-auto px-10 py-4 bg-luxury-gold hover:bg-white text-white hover:text-luxury-charcoal transition-all duration-300 font-mono uppercase text-[12px] tracking-widest font-semibold border border-luxury-gold hover:border-white shadow-lg cursor-pointer"
             >
-              Book Your Suite
+              Book Your Stay
             </button>
             <button
-              onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-white/10 text-[#FCFAF6] font-mono uppercase text-[11px] tracking-widest font-semibold border border-white/40 hover:border-white transition-all cursor-pointer"
+              onClick={() => navigate('/suites')}
+              className="w-full sm:w-auto px-10 py-4 bg-transparent hover:bg-white/10 text-white font-mono uppercase text-[12px] tracking-widest font-semibold border border-white/60 hover:border-white transition-all cursor-pointer"
             >
-              Explore our Rooms
+              View Our Rooms
             </button>
           </motion.div>
         </motion.div>
