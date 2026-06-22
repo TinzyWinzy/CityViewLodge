@@ -197,7 +197,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </div>
                   <div className="flex items-start gap-2.5">
                     <Phone size={14} className="text-luxury-gold shrink-0 mt-0.5" />
-                    <span className="leading-relaxed">+263 77 212 3456</span>
+                    <span className="leading-relaxed">+263 78 009 6836</span>
                   </div>
                   <div className="flex items-start gap-2.5">
                     <Mail size={14} className="text-luxury-gold shrink-0 mt-0.5" />

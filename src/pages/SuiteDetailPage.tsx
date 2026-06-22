@@ -5,30 +5,6 @@ import { ROOMS, IMAGES } from "../guesthouseData";
 import { generateWhatsAppLink } from "../whatsappUtility";
 import { useToast } from "../components/Layout";
 
-const roomImages: Record<string, string> = {
-  "deluxe-garden": IMAGES.roomDeluxe,
-  "master-executive": IMAGES.roomMaster,
-  "double-twin": IMAGES.roomTwin,
-};
-
-const roomGallery: Record<string, string[]> = {
-  "deluxe-garden": [
-    "/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",
-    "/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg",
-    "/assets/images/property/494787926_658807510238553_2158675956903400196_n.jpg",
-  ],
-  "master-executive": [
-    "/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg",
-    "/assets/images/property/494475561_658807623571875_5750875893493548613_n.jpg",
-    "/assets/images/property/480197809_601771535942151_1459793074888622424_n.jpg",
-  ],
-  "double-twin": [
-    "/assets/images/property/480430306_601771529275485_4476888978896392227_n.jpg",
-    "/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg",
-    "/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",
-  ],
-};
-
 export default function SuiteDetailPage() {
   const { id } = useParams<{ id: string }>();
   const { showToast } = useToast();
@@ -50,7 +26,7 @@ export default function SuiteDetailPage() {
     );
   }
 
-  const images = roomGallery[room.id] || [roomImages[room.id] || room.image];
+  const images = [room.image];
 
   const handleQuickBook = () => {
     if (!checkIn || !checkOut) {

@@ -1,12 +1,6 @@
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ROOMS, IMAGES } from "../guesthouseData";
-
-const roomImages: Record<string, string> = {
-  "deluxe-garden": IMAGES.roomDeluxe,
-  "master-executive": IMAGES.roomMaster,
-  "double-twin": IMAGES.roomTwin,
-};
+import { ROOMS } from "../guesthouseData";
 
 export default function SuitesPage() {
   return (
@@ -46,7 +40,7 @@ export default function SuitesPage() {
               <Link key={room.id} to={`/suites/${room.id}`}
                 className="group flex flex-col bg-white border border-luxury-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
                 <div className="relative h-72 overflow-hidden">
-                  <img src={roomImages[room.id] || room.image} alt={room.name}
+                  <img src={room.image} alt={room.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 border border-black/5 shadow-sm">
                     <div className="flex items-center gap-1">
@@ -87,7 +81,7 @@ export default function SuitesPage() {
         <p className="text-xs text-gray-400 font-light mt-3 max-w-md mx-auto">
           Contact our concierge team for a personalized recommendation based on your needs.
         </p>
-        <a href={`https://wa.me/263772123456?text=${encodeURIComponent("Hello City View Guest House, I need help choosing the right suite for my stay.")}`}
+        <a href={`https://wa.me/263780096836?text=${encodeURIComponent("Hello City View Guest House, I need help choosing the right suite for my stay.")}`}
           target="_blank" rel="noopener noreferrer"
           className="inline-block mt-6 px-8 py-3 bg-luxury-gold hover:bg-white text-white hover:text-luxury-charcoal font-mono text-[10px] uppercase tracking-widest font-semibold transition-all">
           Chat with Concierge

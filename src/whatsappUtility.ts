@@ -14,7 +14,7 @@ export interface BookingDetails {
 
 // Default phone number for City View Guest House in Harare, Zimbabwe (e.g. +263)
 // Let's use a standard Zimbabwean business number format or an easily configurable one.
-export const WHATSAPP_PHONE_NUMBER = "+263772123456"; // Harare, Zimbabwe
+export const WHATSAPP_PHONE_NUMBER = "+263780096836"; // Harare, Zimbabwe
 
 /**
  * Generates an elegant WhatsApp dynamic chat link with a personalized pre-filled message

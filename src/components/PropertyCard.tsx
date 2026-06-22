@@ -1,5 +1,4 @@
 import { Star } from "lucide-react";
-import { IMAGES } from "../guesthouseData";
 
 interface PropertyCardProps {
   roomType: {
@@ -11,21 +10,13 @@ interface PropertyCardProps {
   };
 }
 
-const images: Record<string, string | undefined> = {
-  'deluxe-garden': IMAGES.roomDeluxe,
-  'master-executive': IMAGES.roomMaster,
-  'double-twin': IMAGES.roomTwin,
-};
-
 export default function PropertyCard({ roomType }: PropertyCardProps) {
-  const imageUrl = images[roomType.id] || IMAGES.roomDeluxe;
-
   return (
     <div className="group flex h-full flex-col overflow-hidden border-none bg-white shadow-md hover:shadow-2xl hover:shadow-luxury-gold/10 transition-all duration-500 hover:-translate-y-1">
       <a href={`/properties/${roomType.id}`} className="flex h-full flex-col">
         <div className="relative aspect-[4/3] sm:h-72 w-full overflow-hidden">
           <img
-            src={imageUrl}
+            src={roomType.image}
             alt={roomType.name}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />

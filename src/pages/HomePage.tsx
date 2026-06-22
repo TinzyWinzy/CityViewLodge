@@ -14,7 +14,7 @@ import { useToast } from "../components/Layout";
 export default function HomePage() {
   const { showToast } = useToast();
   const [activeCategory, setActiveCategory] = useState<"All" | "General" | "Comfort" | "Utility">("All");
-  const [selectedSuiteId, setSelectedSuiteId] = useState<string>("deluxe-garden");
+  const [selectedSuiteId, setSelectedSuiteId] = useState<string>(ROOMS[0].id);
   const [activeReviewIndex, setActiveReviewIndex] = useState(0);
   const [selectedRoom, setSelectedRoom] = useState(ROOMS[0].name);
   const [checkIn, setCheckIn] = useState("");

@@ -59,7 +59,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-serif text-sm font-medium text-luxury-charcoal">Phone</h4>
-                    <p className="text-xs text-luxury-slate/70 font-light mt-1">+263 77 212 3456</p>
+                    <p className="text-xs text-luxury-slate/70 font-light mt-1">+263 78 009 6836</p>
                   </div>
                 </div>
 
@@ -80,7 +80,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-serif text-sm font-medium text-luxury-charcoal">WhatsApp</h4>
                     <p className="text-xs text-luxury-slate/70 font-light mt-1">Fastest response — typically within minutes</p>
-                    <a href="https://wa.me/263772123456" target="_blank" rel="noopener noreferrer"
+                    <a href="https://wa.me/263780096836" target="_blank" rel="noopener noreferrer"
                       className="inline-block mt-2 px-5 py-2 bg-[#25D366] text-white text-[10px] font-mono uppercase tracking-wider font-bold hover:bg-[#128C7E] transition-all">
                       Chat on WhatsApp
                     </a>

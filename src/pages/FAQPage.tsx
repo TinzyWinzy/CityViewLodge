@@ -114,7 +114,7 @@ export default function FAQPage() {
             className="px-6 py-3 bg-luxury-charcoal text-white font-mono text-[10px] uppercase tracking-widest hover:bg-luxury-gold transition-all">
             Contact Us
           </Link>
-          <a href="https://wa.me/263772123456" target="_blank" rel="noopener noreferrer"
+          <a href="https://wa.me/263780096836" target="_blank" rel="noopener noreferrer"
             className="px-6 py-3 border border-luxury-charcoal text-luxury-charcoal font-mono text-[10px] uppercase tracking-widest hover:bg-luxury-charcoal hover:text-white transition-all">
             WhatsApp Chat
           </a>
