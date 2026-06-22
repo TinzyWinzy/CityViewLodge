@@ -33,12 +33,12 @@ export interface Review {
   date: string;
 }
 
-// Exact generated paths for high-end visuals (storing exact names from images tool response)
+// Property photography — real photos of City View Guest House
 export const IMAGES = {
-  hero: "/src/assets/images/hero_guesthouse_1782160060342.jpg",
-  roomDeluxe: "/src/assets/images/room_deluxe_1782160075596.jpg",
-  roomMaster: "/src/assets/images/room_master_1782160090613.jpg",
-  roomTwin: "/src/assets/images/room_twin_1782160104670.jpg",
+  hero: "/src/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg",
+  roomDeluxe: "/src/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",
+  roomMaster: "/src/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg",
+  roomTwin: "/src/assets/images/property/480430306_601771529275485_4476888978896392227_n.jpg",
 };
 
 export const ROOMS: Room[] = [
