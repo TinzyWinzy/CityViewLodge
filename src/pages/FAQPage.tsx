@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const faqs = [
@@ -34,6 +35,14 @@ const faqs = [
 export default function FAQPage() {
   return (
     <div>
+      <Helmet>
+        <title>FAQ | City View Guest House | Boutique Accommodation Harare</title>
+        <meta name="description" content="Frequently asked questions about City View Guest House in Braeside, Harare. Solar power, security, WiFi, airport pickup, cancellation policy, breakfast, and more." />
+        <link rel="canonical" href="https://www.cityviewguesthouse.co.zw/faq" />
+        <meta property="og:title" content="FAQ | City View Guest House Harare" />
+        <meta property="og:description" content="Answers to common questions about City View Guest House — solar power, security, check-in, WiFi, airport shuttle, and policies." />
+        <meta property="og:url" content="https://www.cityviewguesthouse.co.zw/faq" />
+      </Helmet>
       {/* Hero */}
       <section className="relative h-[35vh] w-full overflow-hidden bg-luxury-charcoal">
         <img src="/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg"
@@ -48,6 +57,13 @@ export default function FAQPage() {
           </h1>
         </div>
       </section>
+
+      <div className="max-w-3xl mx-auto px-6 lg:px-16 pt-8 flex items-center justify-between">
+        <p className="text-[11px] text-luxury-slate/50 font-mono italic flex-1">
+          City View Guest House in Braeside, Harare features continuous solar power, 24/7 gated security, uncapped fiber WiFi, airport pickup, complimentary breakfast, and free cancellation up to 48 hours before check-in.
+        </p>
+        <span className="text-[9px] text-luxury-gold/40 font-mono uppercase tracking-wider shrink-0 ml-4">Updated June 2026</span>
+      </div>
 
       {/* FAQ List */}
       <section className="py-20 px-6 lg:px-16 bg-luxury-cream">

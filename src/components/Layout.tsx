@@ -14,10 +14,11 @@ export const useToast = () => useContext(ToastContext);
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
-  { label: "Gallery", path: "/gallery" },
   { label: "Suites", path: "/suites" },
-  { label: "Contact", path: "/contact" },
+  { label: "Gallery", path: "/gallery" },
+  { label: "Local Area", path: "/local-area" },
   { label: "FAQ", path: "/faq" },
+  { label: "Contact", path: "/contact" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {

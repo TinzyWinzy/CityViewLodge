@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, type RefObject, type FormEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Helmet } from "react-helmet-async";
 import {
   ShieldCheck, Sun, Droplet, Wifi, Coffee, Car, Calendar, Users, MapPin, Star,
   ChevronLeft, ChevronRight, Sparkles, SlidersHorizontal, CalendarDays,
@@ -10,6 +11,7 @@ import { ROOMS, LIFESTYLE_FEATURES, GENERAL_AMENITIES, REVIEWS } from "../guesth
 import { generateWhatsAppLink } from "../whatsappUtility";
 import Hero from "../components/Hero";
 import { useToast } from "../components/Layout";
+import SeoSchema from "../components/SeoSchema";
 
 export default function HomePage() {
   const { showToast } = useToast();
@@ -26,7 +28,7 @@ export default function HomePage() {
   const aboutRef = useRef<HTMLElement>(null);
   const amenitiesRef = useRef<HTMLElement>(null);
 
-  const scrollToSection = (ref: React.RefObject<HTMLElement | null>) => {
+  const scrollToSection = (ref: RefObject<HTMLElement | null>) => {
     if (ref.current) ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -39,7 +41,7 @@ export default function HomePage() {
     showToast(`Pre-selected: ${roomName}. Fill in your dates to instantly draft your WhatsApp request!`);
   };
 
-  const submitBookingRequest = (e: React.FormEvent) => {
+  const submitBookingRequest = (e: FormEvent) => {
     e.preventDefault();
     if (!checkIn || !checkOut) {
       alert("Please select check-in and check-out dates.");
@@ -58,6 +60,15 @@ export default function HomePage() {
 
   return (
     <div>
+      <Helmet>
+        <title>City View Guest House | Boutique Accommodation Harare, Zimbabwe</title>
+        <meta name="description" content="Luxury boutique guest house in Braeside, Harare. Solar-powered, secure, with WhatsApp direct booking. From $80/night. 10 minutes from CBD." />
+        <link rel="canonical" href="https://www.cityviewguesthouse.co.zw/" />
+        <meta property="og:title" content="City View Guest House | Boutique Accommodation Harare" />
+        <meta property="og:description" content="Solar-powered luxury in Braeside, Harare. Secure, quiet, 10 minutes from CBD. Book direct on WhatsApp." />
+        <meta property="og:url" content="https://www.cityviewguesthouse.co.zw/" />
+      </Helmet>
+      <SeoSchema />
       <Hero />
 
       {/* Booking Form */}
@@ -147,6 +158,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      <div className="max-w-6xl mx-auto px-6 lg:px-16 pt-8 flex items-center justify-between">
+        <p className="text-[11px] text-luxury-slate/50 font-mono italic flex-1">
+          City View Guest House in Braeside, Harare offers solar-powered boutique accommodation with 24/7 security, borehole water, and fiber WiFi. Rooms from $30/night. Book direct via WhatsApp.
+        </p>
+        <span className="text-[9px] text-luxury-gold/40 font-mono uppercase tracking-wider shrink-0 ml-4">Updated June 2026</span>
+      </div>
+
       {/* Lifestyle Features */}
       <section ref={aboutRef} className="py-20 bg-luxury-sand px-6 lg:px-16 border-t border-b border-luxury-border">
         <div className="max-w-6xl mx-auto">
@@ -192,6 +210,13 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <div className="max-w-6xl mx-auto px-6 lg:px-16 pt-4 flex items-center justify-between">
+        <p className="text-[11px] text-luxury-slate/50 font-mono italic flex-1">
+          City View Guest House offers 10 boutique suites and rooms in Braeside, Harare including the Self Catering Cottage ($60/night), CBD Room ($45/night), and Transit Room ($30/night). All rooms include fiber WiFi, en-suite bathrooms, and solar-backed power.
+        </p>
+        <span className="text-[9px] text-luxury-gold/40 font-mono uppercase tracking-wider shrink-0 ml-4">Updated June 2026</span>
+      </div>
 
       {/* Suites Showcase */}
       <section ref={suitesRef} className="py-20 px-6 lg:px-16 bg-luxury-cream">
@@ -392,26 +417,24 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="lg:col-span-6 bg-luxury-cream border border-luxury-border p-8 relative flex flex-col justify-between h-[400px]">
-              <div className="absolute inset-0 bg-[#F5F2EF] rounded-none overflow-hidden flex flex-col p-6 text-center justify-center items-center">
-                <div className="absolute top-4 left-4 z-10 bg-luxury-charcoal text-[#FDFCFB] px-3 py-1 font-mono text-[9px] tracking-widest uppercase">Harare Suburbs Map</div>
-                <div className="w-16 h-16 rounded-none bg-white flex items-center justify-center mb-4 border border-[#F0EBE6]">
-                  <MapPin className="text-luxury-gold" size={28} />
-                </div>
-                <span className="font-serif text-lg text-luxury-charcoal font-semibold tracking-tight">City View Boutique Guest House</span>
-                <span className="font-mono text-[10px] text-luxury-gold mt-1">Braeside, Harare, Zimbabwe</span>
-                <p className="text-[11px] text-luxury-slate/60 font-light max-w-sm mt-3 font-sans leading-relaxed">
-                  Highly accessible, safe, and peaceful residential neighborhood layout. Closed parameters. Premium concierge gated checkpoint.
-                </p>
-                <div className="mt-6 flex gap-3">
-                  <span className="text-[10px] bg-white border border-[#F0EBE6] text-[11px] text-luxury-slate px-3 py-1 font-mono">Quiet Zone</span>
-                  <span className="text-[10px] bg-white border border-[#F0EBE6] text-[11px] text-luxury-slate px-3 py-1 font-mono">Level 4 Security</span>
-                </div>
-              </div>
+            <div className="lg:col-span-6 h-[400px] overflow-hidden border border-luxury-border">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.25316234486!2d31.064021!3d-17.786294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a52db0ff5383%3A0x10ce2208732526e2!2s20%20Sandhurst%20Way%2C%20Braeside%2C%20Harare!5e0!3m2!1sen!2szw!4v1"
+                width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
+                title="City View Guest House location on map"
+                className="grayscale hover:grayscale-0 transition-all duration-700"
+              />
             </div>
           </div>
         </div>
       </section>
+
+      {/* Atomic Answer: Booking */}
+      <div className="max-w-6xl mx-auto px-6 lg:px-16 pt-4">
+        <p className="text-[11px] text-luxury-slate/50 font-mono italic">
+          Book City View Guest House directly via WhatsApp for the best rates. Check-in from 14:00, check-out by 11:00. Free cancellation up to 48 hours before arrival.
+        </p>
+      </div>
 
       {/* FAQ */}
       <section className="py-20 bg-luxury-cream px-6 lg:px-16 border-t border-[#F0EBE6]">

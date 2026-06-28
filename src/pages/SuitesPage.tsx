@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ROOMS, PROPERTY_INFO } from "../guesthouseData";
@@ -5,6 +6,14 @@ import { ROOMS, PROPERTY_INFO } from "../guesthouseData";
 export default function SuitesPage() {
   return (
     <div>
+      <Helmet>
+        <title>Our Suites | City View Guest House | Boutique Rooms Harare From $30/night</title>
+        <meta name="description" content="Explore 10 unique suites at City View Guest House in Braeside, Harare. From $30/night. Self Catering Cottage, CBD Room, Africa Room, and more. Solar-powered, secure." />
+        <link rel="canonical" href="https://www.cityviewguesthouse.co.zw/suites" />
+        <meta property="og:title" content="Our Suites | City View Guest House Harare" />
+        <meta property="og:description" content="Browse 10 boutique suites in Braeside, Harare. Rates from $30/night. Self Catering, CBD rooms, and more. Solar power & 24/7 security." />
+        <meta property="og:url" content="https://www.cityviewguesthouse.co.zw/suites" />
+      </Helmet>
       {/* Hero */}
       <section className="relative h-[40vh] w-full overflow-hidden bg-luxury-charcoal">
         <img src="/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg"
@@ -22,6 +31,13 @@ export default function SuitesPage() {
           </p>
         </div>
       </section>
+
+      <div className="max-w-6xl mx-auto px-6 lg:px-16 pt-8 flex items-center justify-between">
+        <p className="text-[11px] text-luxury-slate/50 font-mono italic flex-1">
+          City View Guest House in Braeside, Harare features 10 boutique rooms and suites from $30 to $60 per night. Options range from the Self Catering Cottage (48 m², 4 adults) to the Transit Room (16 m², 1 adult). All suites include en-suite bathrooms, smart TVs, and fiber WiFi.
+        </p>
+        <span className="text-[9px] text-luxury-gold/40 font-mono uppercase tracking-wider shrink-0 ml-4">Updated June 2026</span>
+      </div>
 
       {/* Suite Cards Grid */}
       <section className="py-20 px-6 lg:px-16 bg-luxury-cream">

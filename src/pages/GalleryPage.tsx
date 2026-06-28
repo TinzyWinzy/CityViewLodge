@@ -1,8 +1,17 @@
+import { Helmet } from "react-helmet-async";
 import GallerySection from "../components/GallerySection";
 
 export default function GalleryPage() {
   return (
     <div>
+      <Helmet>
+        <title>Gallery | City View Guest House | Photos of Boutique Accommodation Harare</title>
+        <meta name="description" content="Browse photos of City View Guest House in Braeside, Harare. View our luxury suites, gardens, solar infrastructure, and secure property." />
+        <link rel="canonical" href="https://www.cityviewguesthouse.co.zw/gallery" />
+        <meta property="og:title" content="Gallery | City View Guest House Harare" />
+        <meta property="og:description" content="Photo tour of City View Guest House — luxury suites, gardens, solar-powered property in Braeside, Harare." />
+        <meta property="og:url" content="https://www.cityviewguesthouse.co.zw/gallery" />
+      </Helmet>
       {/* Page Header */}
       <section className="relative h-[40vh] w-full overflow-hidden bg-luxury-charcoal">
         <img src="/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg"

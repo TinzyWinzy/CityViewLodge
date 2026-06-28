@@ -329,6 +329,77 @@ export const REVIEWS: Review[] = [
   }
 ];
 
+export interface LocalAttraction {
+  name: string;
+  description: string;
+  distance: string;
+  category: string;
+}
+
+export const LOCAL_ATTRACTIONS: LocalAttraction[] = [
+  { name: "Harare Central Business District", description: "Commercial hub with banks, restaurants, shops, and government offices.", distance: "10 min drive", category: "City Access" },
+  { name: "Robert Gabriel Mugabe International Airport", description: "Harare's main international airport with connections to Johannesburg, Nairobi, Dubai, and Addis Ababa.", distance: "15 min drive", category: "Transit" },
+  { name: "Chapman Golf Club", description: "Prestigious 18-hole golf course with well-maintained greens and a clubhouse.", distance: "8 min drive", category: "Leisure" },
+  { name: "Eastgate Shopping Centre", description: "Major shopping mall with supermarkets, retail stores, cinemas, and food court.", distance: "9 min drive", category: "Shopping" },
+  { name: "Sam Levy's Village", description: "Upscale shopping and dining precinct in Borrowdale with boutiques and restaurants.", distance: "15 min drive", category: "Shopping" },
+  { name: "National Botanic Gardens", description: "Tranquil 58-hectare garden showcasing Zimbabwe's diverse indigenous plant life.", distance: "12 min drive", category: "Nature" },
+  { name: "Mukuvisi Woodlands", description: "Conservation area with walking trails, birdwatching, and wildlife viewing.", distance: "10 min drive", category: "Nature" },
+  { name: "Avondale Flea Market", description: "Popular weekend market for local crafts, art, fresh produce, and second-hand goods.", distance: "8 min drive", category: "Shopping" },
+  { name: "Zimbabwe Museum of Human Sciences", description: "Museum featuring archaeological exhibits including the famous Lemba artifacts.", distance: "12 min drive", category: "Culture" },
+  { name: "Borrowdale Racecourse", description: "Horse racing venue and social hub hosting events and gatherings.", distance: "18 min drive", category: "Leisure" },
+];
+
+export const EXTENDED_REVIEWS: Review[] = [
+  {
+    id: "rev-g1",
+    author: "Tawonga Tamirepi",
+    location: "Google Reviews",
+    rating: 5,
+    text: "Great value for money. The host Holyfield provided excellent service throughout our stay. Highly recommended for business travelers.",
+    date: "June 2026"
+  },
+  {
+    id: "rev-g2",
+    author: "Blessing Kanyande",
+    location: "Google Reviews",
+    rating: 5,
+    text: "Amazing place. Clean rooms, friendly staff, and a peaceful environment. The solar backup means no load shedding interruptions at all.",
+    date: "April 2026"
+  },
+  {
+    id: "rev-g3",
+    author: "Warerwa Mutongerwa",
+    location: "Google Reviews",
+    rating: 5,
+    text: "Luxury stay with a great view of the Harare skyline. The quiet Braeside location is perfect for rest after a long day.",
+    date: "December 2025"
+  },
+  {
+    id: "rev-g4",
+    author: "Kundai Teswa",
+    location: "Google Reviews",
+    rating: 5,
+    text: "Excellent service and well-maintained property. The attention to detail in the rooms is impressive.",
+    date: "November 2025"
+  },
+  {
+    id: "rev-g5",
+    author: "Leonard Zambwi",
+    location: "Google Reviews",
+    rating: 5,
+    text: "Very nice rooms and close to Harare airport for air travellers. Convenient location with easy access to the city.",
+    date: "July 2024"
+  },
+  {
+    id: "rev-g6",
+    author: "Adrian Mandibaya",
+    location: "Google Reviews",
+    rating: 5,
+    text: "Excellent place to stay in Harare. The security is top-notch and the staff are incredibly helpful.",
+    date: "September 2025"
+  },
+];
+
 export const LOCAL_SEO_KEYWORDS = [
   "Boutique Guest House Braeside",
   "Luxury Self-Catering Harare Zimbabwe",

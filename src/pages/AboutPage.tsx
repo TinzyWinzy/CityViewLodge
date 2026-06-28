@@ -1,10 +1,19 @@
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
 import { MapPin } from "lucide-react";
 import { LIFESTYLE_FEATURES } from "../guesthouseData";
 
 export default function AboutPage() {
   return (
     <div>
+      <Helmet>
+        <title>About | City View Guest House | Boutique Accommodation Braeside, Harare</title>
+        <meta name="description" content="Discover City View Guest House in Braeside, Harare. Solar-powered, secure boutique accommodation with continuous power, borehole water, and fiber WiFi. 10min from CBD." />
+        <link rel="canonical" href="https://www.cityviewguesthouse.co.zw/about" />
+        <meta property="og:title" content="About City View Guest House | Braeside, Harare" />
+        <meta property="og:description" content="Experience solar-powered luxury boutique accommodation in Braeside, Harare. 24/7 security, borehole water, high-speed fiber WiFi. Book direct." />
+        <meta property="og:url" content="https://www.cityviewguesthouse.co.zw/about" />
+      </Helmet>
       {/* Hero */}
       <section className="relative h-[50vh] lg:h-[60vh] w-full overflow-hidden bg-luxury-charcoal">
         <img src="/assets/images/property/Hero.jpg" alt="City View Guest House"
@@ -25,6 +34,13 @@ export default function AboutPage() {
           </motion.p>
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-6 lg:px-16 pt-8 flex items-center justify-between">
+        <p className="text-[11px] text-luxury-slate/50 font-mono italic flex-1">
+          City View Guest House is a boutique guest house located at 20 Sandhurst Way, Braeside, Harare, Zimbabwe. The property features solar power backup, deep borehole water supply, 24/7 gated security, and high-speed fiber WiFi — just 10 minutes from Harare CBD.
+        </p>
+        <span className="text-[9px] text-luxury-gold/40 font-mono uppercase tracking-wider shrink-0 ml-4">Updated June 2026</span>
+      </div>
 
       {/* About Content */}
       <section className="py-20 px-6 lg:px-16 bg-white">
@@ -133,15 +149,13 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            <div className="lg:col-span-6 bg-luxury-cream border border-luxury-border p-8 h-[400px] flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="text-luxury-gold mx-auto" size={40} />
-                <h3 className="font-serif text-xl text-luxury-charcoal font-semibold mt-4">City View Guest House</h3>
-                <p className="font-mono text-[10px] text-luxury-gold mt-1">Braeside, Harare, Zimbabwe</p>
-                <p className="text-[11px] text-luxury-slate/60 font-light max-w-sm mt-3">
-                  20 Sandhurst Way — Quiet residential sanctuary in secure Braeside suburb.
-                </p>
-              </div>
+            <div className="lg:col-span-6 h-[400px] overflow-hidden border border-luxury-border">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.25316234486!2d31.064021!3d-17.786294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a52db0ff5383%3A0x10ce2208732526e2!2s20%20Sandhurst%20Way%2C%20Braeside%2C%20Harare!5e0!3m2!1sen!2szw!4v1"
+                width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
+                title="City View Guest House location in Braeside, Harare"
+                className="grayscale hover:grayscale-0 transition-all duration-700"
+              />
             </div>
           </div>
         </div>

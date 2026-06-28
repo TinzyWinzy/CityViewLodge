@@ -3,7 +3,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const BASE = "https://city-view-lodge.vercel.app";
+const BASE = "https://www.cityviewguesthouse.co.zw";
 const IMAGE_PATHS = [
   "/assets/images/property/Hero.jpg",
   "/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",

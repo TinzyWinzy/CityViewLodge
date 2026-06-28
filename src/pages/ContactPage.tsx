@@ -1,8 +1,17 @@
+import { Helmet } from "react-helmet-async";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 
 export default function ContactPage() {
   return (
     <div>
+      <Helmet>
+        <title>Contact | City View Guest House | Braeside, Harare</title>
+        <meta name="description" content="Contact City View Guest House in Braeside, Harare. Call +263 78 009 6836, email stay@cityviewguesthouse.co.zw, or chat on WhatsApp. 20 Sandhurst Way." />
+        <link rel="canonical" href="https://www.cityviewguesthouse.co.zw/contact" />
+        <meta property="og:title" content="Contact City View Guest House | Harare" />
+        <meta property="og:description" content="Get in touch with City View Guest House in Braeside, Harare. WhatsApp, phone, email, or visit us at 20 Sandhurst Way." />
+        <meta property="og:url" content="https://www.cityviewguesthouse.co.zw/contact" />
+      </Helmet>
       {/* Hero */}
       <section className="relative h-[40vh] w-full overflow-hidden bg-luxury-charcoal">
         <img src="/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg"
@@ -99,22 +108,19 @@ export default function ContactPage() {
 
             {/* Map / Visual */}
             <div className="lg:col-span-7">
-              <div className="bg-luxury-cream border border-luxury-border h-[500px] flex items-center justify-center relative">
-                <div className="text-center p-8">
-                  <MapPin className="text-luxury-gold mx-auto" size={48} />
-                  <h3 className="font-serif text-xl text-luxury-charcoal font-semibold mt-4">City View Guest House</h3>
-                  <p className="font-mono text-[10px] text-luxury-gold mt-1">Braeside, Harare, Zimbabwe</p>
-                  <div className="mt-6 space-y-2 font-mono text-[11px] text-luxury-slate/90 text-left max-w-xs mx-auto">
-                    <div className="flex justify-between"><span>Harare CBD</span><span className="font-bold">10 min drive</span></div>
-                    <div className="flex justify-between"><span>RGM International Airport</span><span className="font-bold">15 min drive</span></div>
-                    <div className="flex justify-between"><span>Chapman Golf Club</span><span className="font-bold">8 min drive</span></div>
-                    <div className="flex justify-between"><span>Eastgate Shopping Centre</span><span className="font-bold">9 min drive</span></div>
-                  </div>
-                  <a href="https://maps.google.com/?q=20+Sandhurst+Way+Braeside+Harare" target="_blank" rel="noopener noreferrer"
-                    className="inline-block mt-6 px-6 py-3 border border-luxury-charcoal text-[10px] font-mono uppercase tracking-wider hover:bg-luxury-charcoal hover:text-white transition-all">
-                    Get Directions
-                  </a>
-                </div>
+              <div className="h-[500px] overflow-hidden border border-luxury-border">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.25316234486!2d31.064021!3d-17.786294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a52db0ff5383%3A0x10ce2208732526e2!2s20%20Sandhurst%20Way%2C%20Braeside%2C%20Harare!5e0!3m2!1sen!2szw!4v1"
+                  width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
+                  title="Map showing City View Guest House at 20 Sandhurst Way, Braeside, Harare"
+                  className="grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+              <div className="mt-4 space-y-2 font-mono text-[11px] text-luxury-slate/90 px-2">
+                <div className="flex justify-between"><span>Harare CBD</span><span className="font-bold">10 min drive</span></div>
+                <div className="flex justify-between"><span>RGM International Airport</span><span className="font-bold">15 min drive</span></div>
+                <div className="flex justify-between"><span>Chapman Golf Club</span><span className="font-bold">8 min drive</span></div>
+                <div className="flex justify-between"><span>Eastgate Shopping Centre</span><span className="font-bold">9 min drive</span></div>
               </div>
             </div>
           </div>

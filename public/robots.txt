@@ -1,0 +1,22 @@
+# City View Guest House - Robots.txt
+# https://www.cityviewguesthouse.co.zw
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /*.json$
+Disallow: /*.env$
+
+Sitemap: https://www.cityviewguesthouse.co.zw/sitemap.xml

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useParams, Link } from "react-router-dom";
 import { Calendar, Users, SlidersHorizontal, Star, ArrowLeft } from "lucide-react";
 import { ROOMS, IMAGES } from "../guesthouseData";
@@ -17,6 +18,10 @@ export default function SuiteDetailPage() {
   if (!room) {
     return (
       <div className="py-32 text-center px-6">
+        <Helmet>
+          <title>Suite Not Found | City View Guest House</title>
+          <meta name="robots" content="noindex" />
+        </Helmet>
         <h1 className="font-serif text-3xl text-luxury-charcoal">Suite Not Found</h1>
         <p className="text-xs text-luxury-slate/70 mt-2">The suite you're looking for doesn't exist.</p>
         <Link to="/suites" className="inline-block mt-6 text-luxury-gold font-mono text-xs uppercase tracking-wider hover:underline">
@@ -40,6 +45,14 @@ export default function SuiteDetailPage() {
 
   return (
     <div>
+      <Helmet>
+        <title>{room.name} | City View Guest House | {room.rate} - Braeside, Harare</title>
+        <meta name="description" content={`Book the ${room.name} at City View Guest House in Braeside, Harare. ${room.size}, ${room.capacity}, ${room.bedType}. ${room.rate}. Solar-powered, secure, with fiber WiFi.`} />
+        <link rel="canonical" href={`https://www.cityviewguesthouse.co.zw/suites/${room.id}`} />
+        <meta property="og:title" content={`${room.name} | City View Guest House Harare`} />
+        <meta property="og:description" content={room.tagline} />
+        <meta property="og:url" content={`https://www.cityviewguesthouse.co.zw/suites/${room.id}`} />
+      </Helmet>
       {/* Gallery Carousel */}
       <section className="relative h-[50vh] lg:h-[65vh] w-full overflow-hidden bg-luxury-charcoal">
         <img src={images[currentImage]} alt={room.name}
