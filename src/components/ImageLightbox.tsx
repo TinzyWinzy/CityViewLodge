@@ -21,7 +21,7 @@ export default function ImageLightbox({ src, alt, children }: { src: string; alt
 
   return (
     <>
-      <div onClick={() => setOpen(true)} className="cursor-pointer">
+      <div onClick={() => setOpen(true)} className="cursor-pointer h-full">
         {children}
       </div>
       <AnimatePresence>
