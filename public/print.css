@@ -1,0 +1,71 @@
+/* Print stylesheet — City View Guest House */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Hide interactive elements */
+  header,
+  footer,
+  .sticky,
+  .fixed,
+  .announcement-bar,
+  .lg\\:hidden,
+  button,
+  iframe,
+  video,
+  noscript,
+  [role="button"],
+  .pointer-events-auto {
+    display: none !important;
+  }
+
+  /* Show all page content */
+  main,
+  .container,
+  section {
+    display: block !important;
+    page-break-inside: avoid;
+  }
+
+  /* Simplify links */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666 !important;
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript"]::after {
+    content: "";
+  }
+
+  /* Ensure images fit */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Page margins */
+  @page {
+    margin: 2cm;
+  }
+
+  /* Avoid orphans */
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+}

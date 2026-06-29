@@ -36,19 +36,19 @@ export interface Review {
 // Property photography — real photos of City View Guest House
 export const IMAGES = {
   hero: "/assets/images/property/Hero.jpg",
-  roomDeluxe: "/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",
-  roomMaster: "/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg",
-  roomTwin: "/assets/images/property/480430306_601771529275485_4476888978896392227_n.jpg",
-  roomCottage: "/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg",
-  roomCBD: "/assets/images/property/480544491_608078168644821_6146713533311401747_n.jpg",
-  roomAfrica: "/assets/images/property/480571412_609613575157947_8567039695977118964_n.jpg",
-  roomFocal: "/assets/images/property/480629020_608078165311488_3750179112594770203_n.jpg",
-  roomSmart: "/assets/images/property/480759217_608077961978175_5664803457437882050_n.jpg",
-  roomZimbo: "/assets/images/property/480767547_608078098644828_6171409888252443646_n.jpg",
-  roomHideout: "/assets/images/property/480970352_609613211824650_4960684750315596793_n.jpg",
-  roomCoolcorn: "/assets/images/property/481050191_609613265157978_7058169074812533997_n.jpg",
-  roomStopover: "/assets/images/property/481053713_609613231824648_8017419109924729747_n.jpg",
-  roomTransit: "/assets/images/property/480430306_601771529275485_4476888978896392227_n.jpg",
+  roomDeluxe: "/assets/images/property/deluxe-garden-suite.jpg",
+  roomMaster: "/assets/images/property/master-executive-room.jpg",
+  roomTwin: "/assets/images/property/cozy-twin-room.jpg",
+  roomCottage: "/assets/images/property/deluxe-garden-suite.jpg",
+  roomCBD: "/assets/images/property/cbd-room.jpg",
+  roomAfrica: "/assets/images/property/africa-room.jpg",
+  roomFocal: "/assets/images/property/focal-point-room.jpg",
+  roomSmart: "/assets/images/property/smart-world-room.jpg",
+  roomZimbo: "/assets/images/property/zimbo-room.jpg",
+  roomHideout: "/assets/images/property/hide-out-room.jpg",
+  roomCoolcorn: "/assets/images/property/cool-corn-room.jpg",
+  roomStopover: "/assets/images/property/stop-over-room.jpg",
+  roomTransit: "/assets/images/property/cozy-twin-room.jpg",
 };
 
 export const ROOMS: Room[] = [
@@ -400,6 +400,77 @@ export const EXTENDED_REVIEWS: Review[] = [
   },
 ];
 
+export interface BlogArticle {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  image: string;
+  author: string;
+}
+
+export const BLOG_ARTICLES: BlogArticle[] = [
+  {
+    id: "harare-transport-guide",
+    title: "Getting Around Harare: A Guest's Transport Guide",
+    excerpt: "From airport transfers to local commuter routes — everything you need to navigate Harare like a local during your stay at City View Guest House.",
+    content: `Navigating Harare as a first-time visitor can feel overwhelming, but with a few insider tips you'll be moving around the city with confidence.
+
+Airport Transfers
+Robert Gabriel Mugabe International Airport is approximately 15 minutes from City View Guest House. We recommend pre-arranging a private transfer — our host Holyfield can coordinate pickup for $15 USD one way. This is the most reliable option, especially for late-night arrivals.
+
+Ride-Hailing Apps
+Hwindi and Vaya are Zimbabwe's primary ride-hailing apps, similar to Uber. Download them before your trip — they work well within Harare and offer transparent pricing. A trip from Braeside to the CBD typically costs $5-8 USD.
+
+Commuter Omnibuses (Kombis)
+For the adventurous traveler, Harare's kombi network covers every corner of the city. The Braeside route runs frequently along Simon Mazorodze Road. Fares are around $1-2 USD. Not recommended for airport transfers or late evenings.
+
+Car Rentals
+Several international agencies operate at the airport: Avis, Budget, and Europcar. A small sedan rents for approximately $40-60 USD per day. Driving is on the left. Google Maps works well for navigation, though offline maps are useful outside the city.
+
+Taxis
+Traditional taxis can be hailed at shopping centers or called via WhatsApp. Your host can provide reliable driver contacts. Always agree on the fare before starting the journey.
+
+Walking in Braeside
+Braeside is a walkable suburb with tree-lined streets. The nearby Sandhurst Way has small shops and takeaways. For longer walks, early mornings are pleasant and safe.
+
+Pro Tip: Save your host's WhatsApp number (+263 78 009 6836) — if you ever get stuck, they can arrange a ride or give directions.`,
+    date: "June 2026",
+    image: "/assets/images/property/premium-amenities.jpg",
+    author: "City View Guest House"
+  },
+  {
+    id: "braeside-neighborhood-guide",
+    title: "Exploring Braeside: Harare's Quiet Gem",
+    excerpt: "Discover why Braeside is one of Harare's most sought-after residential suburbs — from its leafy streets to its convenient location near the city center.",
+    content: `Tucked away just 10 minutes from Harare's central business district, Braeside offers the perfect balance of suburban tranquility and urban accessibility.
+
+A Brief History
+Braeside was developed in the mid-20th century as a residential suburb for Harare's growing professional class. Its wide, tree-lined avenues and generous stand sizes reflect an era when space and greenery were prioritized. Today, it remains one of the city's most desirable residential areas.
+
+Why Stay in Braeside?
+Security is a top priority here. The suburb features active neighborhood watch programs, and most properties — including City View Guest House — have electric fencing, automated gates, and CCTV. It's common to see security details patrolling the streets at night.
+
+The location is unbeatable. You're minutes from:
+- Eastgate Shopping Centre (9 min drive)
+- Chapman Golf Club (8 min drive)
+- Harare CBD (10 min drive)
+- Mukuvisi Woodlands (10 min drive)
+- Airport (15 min drive)
+
+Local Eats
+Braeside has a surprising array of local eating spots. Munchies Express delivers hearty Zimbabwean meals, while Braeside Kitchen offers a mix of local and continental dishes. For a treat, the nearby Sam Levy's Village in Borrowdale has excellent restaurants.
+
+The Braeside Vibe
+What makes Braeside special is its community feel. On weekend mornings, you'll see neighbors walking dogs, joggers on the leafy streets, and families heading to church. The pace is slower here — a welcome contrast to the city's hustle.
+
+City View sits perfectly within this landscape — a quiet, secure retreat that lets you experience the best of Braeside living while being moments from everything Harare offers.`,
+    date: "May 2026",
+    image: "/assets/images/property/garden-details.jpg",
+    author: "City View Guest House"
+  }
+];
 export const LOCAL_SEO_KEYWORDS = [
   "Boutique Guest House Braeside",
   "Luxury Self-Catering Harare Zimbabwe",

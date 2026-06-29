@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { ShieldCheck, Sun, Menu, X, Star, MapPin, Phone, Mail, Globe } from "lucide-react";
 import WhatsAppFloatingButton from "./WhatsAppFloatingButton";
+import CookieConsent from "./CookieConsent";
 import { LOCAL_SEO_KEYWORDS } from "../guesthouseData";
 import { useLang } from "./LanguageContext";
 
@@ -19,6 +20,7 @@ const navLinks = [
   { key: "nav.gallery", path: "/gallery" },
   { key: "nav.local-area", path: "/local-area" },
   { key: "nav.faq", path: "/faq" },
+  { key: "nav.blog", path: "/blog" },
   { key: "nav.contact", path: "/contact" },
 ];
 
@@ -258,6 +260,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </footer>
 
         <WhatsAppFloatingButton />
+        <CookieConsent />
       </div>
     </ToastContext.Provider>
   );

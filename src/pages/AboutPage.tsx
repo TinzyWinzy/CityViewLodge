@@ -78,19 +78,19 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="h-[400px] overflow-hidden">
-              <img src="/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg"
+              <img src="/assets/images/property/premium-amenities.jpg"
                 alt="City View Guest House exterior" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
             </div>
             <div className="h-[400px] overflow-hidden">
-              <img src="/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg"
+              <img src="/assets/images/property/deluxe-garden-suite.jpg"
                 alt="Deluxe Garden Suite interior" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
             </div>
             <div className="h-[400px] overflow-hidden">
-              <img src="/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg"
+              <img src="/assets/images/property/master-executive-room.jpg"
                 alt="Garden and patio" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
             </div>
             <div className="h-[400px] overflow-hidden">
-              <img src="/assets/images/property/480430306_601771529275485_4476888978896392227_n.jpg"
+              <img src="/assets/images/property/cozy-twin-room.jpg"
                 alt="Twin room" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
             </div>
           </div>

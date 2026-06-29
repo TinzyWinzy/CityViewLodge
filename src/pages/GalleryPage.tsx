@@ -14,7 +14,7 @@ export default function GalleryPage() {
       </Helmet>
       {/* Page Header */}
       <section className="relative h-[40vh] w-full overflow-hidden bg-luxury-charcoal">
-        <img src="/assets/images/property/480110531_601771305942174_3590895036994663114_n.jpg"
+        <img src="/assets/images/property/premium-amenities.jpg"
           alt="City View Guest House" className="absolute inset-0 w-full h-full object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-luxury-charcoal via-luxury-charcoal/40 to-transparent" />
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">

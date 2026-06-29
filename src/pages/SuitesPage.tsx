@@ -16,7 +16,7 @@ export default function SuitesPage() {
       </Helmet>
       {/* Hero */}
       <section className="relative h-[40vh] w-full overflow-hidden bg-luxury-charcoal">
-        <img src="/assets/images/property/494724128_658807363571901_7077018319187238123_n.jpg"
+        <img src="/assets/images/property/deluxe-garden-suite.jpg"
           alt="Luxury Suites" className="absolute inset-0 w-full h-full object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-luxury-charcoal via-luxury-charcoal/40 to-transparent" />
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">

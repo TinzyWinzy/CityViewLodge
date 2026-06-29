@@ -128,8 +128,9 @@ const schema = {
         { "@type": "ListItem", "position": 3, "name": "Suites", "item": "https://www.cityviewguesthouse.co.zw/suites" },
         { "@type": "ListItem", "position": 4, "name": "Gallery", "item": "https://www.cityviewguesthouse.co.zw/gallery" },
         { "@type": "ListItem", "position": 5, "name": "FAQ", "item": "https://www.cityviewguesthouse.co.zw/faq" },
-        { "@type": "ListItem", "position": 6, "name": "Contact", "item": "https://www.cityviewguesthouse.co.zw/contact" },
-        { "@type": "ListItem", "position": 7, "name": "Local Area", "item": "https://www.cityviewguesthouse.co.zw/local-area" }
+        { "@type": "ListItem", "position": 6, "name": "Blog", "item": "https://www.cityviewguesthouse.co.zw/blog" },
+        { "@type": "ListItem", "position": 7, "name": "Contact", "item": "https://www.cityviewguesthouse.co.zw/contact" },
+        { "@type": "ListItem", "position": 8, "name": "Local Area", "item": "https://www.cityviewguesthouse.co.zw/local-area" }
       ]
     }
   ]

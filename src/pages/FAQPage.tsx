@@ -45,7 +45,7 @@ export default function FAQPage() {
       </Helmet>
       {/* Hero */}
       <section className="relative h-[35vh] w-full overflow-hidden bg-luxury-charcoal">
-        <img src="/assets/images/property/494700947_658807310238573_3674695008729771176_n.jpg"
+        <img src="/assets/images/property/master-executive-room.jpg"
           alt="FAQ" className="absolute inset-0 w-full h-full object-cover opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-t from-luxury-charcoal via-luxury-charcoal/40 to-transparent" />
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
