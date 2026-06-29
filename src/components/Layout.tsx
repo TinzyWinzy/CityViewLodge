@@ -1,9 +1,10 @@
 import React, { useState, useEffect, createContext, useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { ShieldCheck, Sun, Menu, X, Star, MapPin, Phone, Mail } from "lucide-react";
+import { ShieldCheck, Sun, Menu, X, Star, MapPin, Phone, Mail, Globe } from "lucide-react";
 import WhatsAppFloatingButton from "./WhatsAppFloatingButton";
 import { LOCAL_SEO_KEYWORDS } from "../guesthouseData";
+import { useLang } from "./LanguageContext";
 
 interface ToastContextType {
   showToast: (msg: string) => void;
@@ -12,16 +13,17 @@ const ToastContext = createContext<ToastContextType>({ showToast: () => {} });
 export const useToast = () => useContext(ToastContext);
 
 const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "Suites", path: "/suites" },
-  { label: "Gallery", path: "/gallery" },
-  { label: "Local Area", path: "/local-area" },
-  { label: "FAQ", path: "/faq" },
-  { label: "Contact", path: "/contact" },
+  { key: "nav.home", path: "/" },
+  { key: "nav.about", path: "/about" },
+  { key: "nav.suites", path: "/suites" },
+  { key: "nav.gallery", path: "/gallery" },
+  { key: "nav.local-area", path: "/local-area" },
+  { key: "nav.faq", path: "/faq" },
+  { key: "nav.contact", path: "/contact" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const { t, lang, setLang } = useLang();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const location = useLocation();
@@ -107,17 +109,30 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   location.pathname === link.path ? "text-luxury-gold border-luxury-gold" : ""
                 }`}
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             ))}
+            <Link to="/stay"
+              className={`hover:text-luxury-gold transition-colors py-1 border-b border-transparent hover:border-luxury-gold ${
+                location.pathname === "/stay" ? "text-luxury-gold border-luxury-gold" : ""
+              }`}>
+              {t("portal.title")}
+            </Link>
           </nav>
 
           <div className="flex items-center gap-3">
+            {/* Language Toggle */}
+            <button onClick={() => setLang(lang === "en" ? "sn" : "en")}
+              className="flex items-center gap-1.5 px-3 py-2 border border-luxury-border text-[9px] font-mono uppercase tracking-wider hover:bg-luxury-sand transition-all cursor-pointer text-luxury-charcoal/70"
+              title={lang === "en" ? "Switch to Shona" : "Switch to English"}>
+              <Globe size={13} className="text-luxury-gold" />
+              {lang === "en" ? "SH" : "EN"}
+            </button>
             <button
               onClick={scrollToBooking}
               className="hidden lg:block px-6 py-2.5 border border-luxury-charcoal text-[10px] tracking-widest uppercase hover:bg-luxury-charcoal hover:text-white transition-all duration-300 font-medium cursor-pointer bg-transparent"
             >
-              Book Direct
+              {t("nav.book-direct")}
             </button>
             {/* Mobile hamburger */}
             <button
@@ -148,14 +163,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       location.pathname === link.path ? "text-luxury-gold" : "text-luxury-charcoal/80"
                     }`}
                   >
-                    {link.label}
+                    {t(link.key)}
                   </Link>
                 ))}
+                <Link to="/stay"
+                  className={`text-sm uppercase tracking-[0.2em] font-medium py-2 border-b border-luxury-border/50 ${
+                    location.pathname === "/stay" ? "text-luxury-gold" : "text-luxury-charcoal/80"
+                  }`}>
+                  {t("portal.title")}
+                </Link>
+                <button onClick={() => setLang(lang === "en" ? "sn" : "en")}
+                  className="text-sm uppercase tracking-[0.2em] font-medium py-2 text-luxury-gold/70 border-b border-luxury-border/50 text-left">
+                  {lang === "en" ? "ChiShona" : "English"}
+                </button>
                 <button
                   onClick={() => { setMobileMenuOpen(false); scrollToBooking(); }}
                   className="mt-2 px-6 py-3 bg-luxury-charcoal text-white text-[10px] tracking-widest uppercase font-medium text-center"
                 >
-                  Book Direct
+                  {t("nav.book-direct")}
                 </button>
               </div>
             </motion.div>
@@ -214,7 +239,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <div className="flex flex-col gap-2 text-xs text-gray-400 font-sans">
                   {navLinks.map((link) => (
                     <Link key={link.path} to={link.path} className="hover:text-luxury-gold transition-colors">
-                      {link.label}
+                      {t(link.key)}
                     </Link>
                   ))}
                 </div>

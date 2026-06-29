@@ -48,4 +48,9 @@
       <image:title>Braeside Harare neighborhood - City View Guest House</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://www.cityviewguesthouse.co.zw/stay</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

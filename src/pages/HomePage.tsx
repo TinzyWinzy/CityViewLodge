@@ -1,11 +1,11 @@
-import { useState, useRef, useEffect, type RefObject, type FormEvent } from "react";
+import { useState, useRef, useEffect, useMemo, type RefObject, type FormEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Helmet } from "react-helmet-async";
 import {
   ShieldCheck, Sun, Droplet, Wifi, Coffee, Car, Calendar, Users, MapPin, Star,
   ChevronLeft, ChevronRight, Sparkles, SlidersHorizontal, CalendarDays,
   Check, Phone, Mail, ArrowRight, Info, Clock, Shield, Utensils,
-  Maximize2,
+  Maximize2, Plane,
 } from "lucide-react";
 import { ROOMS, LIFESTYLE_FEATURES, GENERAL_AMENITIES, REVIEWS } from "../guesthouseData";
 import { generateWhatsAppLink } from "../whatsappUtility";
@@ -23,6 +23,26 @@ export default function HomePage() {
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState(1);
   const [customRequest, setCustomRequest] = useState("");
+  const [includeShuttle, setIncludeShuttle] = useState(false);
+  const [includeBreakfast, setIncludeBreakfast] = useState(false);
+
+  const selectedRoomData = useMemo(() => ROOMS.find((r) => r.name === selectedRoom), [selectedRoom]);
+  const nights = useMemo(() => {
+    if (!checkIn || !checkOut) return 0;
+    const s = new Date(checkIn), e = new Date(checkOut);
+    const diff = Math.ceil((e.getTime() - s.getTime()) / 86400000);
+    return Math.max(0, diff);
+  }, [checkIn, checkOut]);
+
+  const baseRate = useMemo(() => {
+    if (!selectedRoomData) return 0;
+    const match = selectedRoomData.rate.match(/\d+/);
+    return match ? parseInt(match[0]) : 0;
+  }, [selectedRoomData]);
+
+  const shuttleTotal = includeShuttle ? 15 : 0;
+  const breakfastTotal = includeBreakfast ? 8 * nights : 0;
+  const totalEstimate = (baseRate * nights) + shuttleTotal + breakfastTotal;
   const bookingFormRef = useRef<HTMLDivElement>(null);
   const suitesRef = useRef<HTMLElement>(null);
   const aboutRef = useRef<HTMLElement>(null);
@@ -47,9 +67,13 @@ export default function HomePage() {
       alert("Please select check-in and check-out dates.");
       return;
     }
+    const extras: string[] = [];
+    if (includeShuttle) extras.push("Airport shuttle ($15)");
+    if (includeBreakfast) extras.push(`Breakfast × ${nights} nights ($${breakfastTotal})`);
+    const extrasMsg = extras.length ? ` Add-ons: ${extras.join(", ")}.` : "";
     const link = generateWhatsAppLink({
       roomName: selectedRoom, checkIn, checkOut, guests,
-      customMessage: customRequest ? `Special request: ${customRequest}.` : undefined,
+      customMessage: `Estimated total: $${totalEstimate}.${extrasMsg}${customRequest ? ` Special request: ${customRequest}.` : ""}`,
       pageContext: "Interactive Checkout Draft",
     });
     window.open(link, "_blank", "noopener,noreferrer");
@@ -130,6 +154,54 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* Rate Calculator */}
+            <div className="border border-luxury-border bg-luxury-sand p-5">
+              <span className="text-[10px] uppercase font-mono tracking-[0.15em] text-luxury-gold font-semibold block mb-3 flex items-center gap-2">
+                <CalendarDays size={13} /> Rate Calculator
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <p className="text-[10px] font-mono text-luxury-slate/60">Base Rate</p>
+                  <p className="font-serif text-lg font-semibold text-luxury-charcoal">
+                    {selectedRoomData ? selectedRoomData.rate : "$0"}{nights > 0 && <span className="text-xs font-mono text-luxury-slate/60 font-light"> × {nights} {nights === 1 ? "night" : "nights"}</span>}
+                  </p>
+                </div>
+                <div className="text-right sm:text-right">
+                  <p className="text-[10px] font-mono text-luxury-slate/60">Room Total</p>
+                  <p className="font-serif text-2xl font-bold text-luxury-charcoal">
+                    {nights > 0 ? `$${baseRate * nights}` : "—"}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-3 border-t border-luxury-border pt-3 mb-3">
+                <label className="flex items-center gap-2 text-[10px] font-mono text-luxury-slate/80 cursor-pointer bg-white border border-luxury-border px-3 py-2 hover:bg-luxury-cream transition-colors">
+                  <input type="checkbox" checked={includeShuttle} onChange={() => setIncludeShuttle(!includeShuttle)}
+                    className="accent-luxury-gold" />
+                  <Plane size={12} className="text-luxury-gold" /> Airport Shuttle <span className="text-luxury-gold">($15)</span>
+                </label>
+                <label className="flex items-center gap-2 text-[10px] font-mono text-luxury-slate/80 cursor-pointer bg-white border border-luxury-border px-3 py-2 hover:bg-luxury-cream transition-colors">
+                  <input type="checkbox" checked={includeBreakfast} onChange={() => setIncludeBreakfast(!includeBreakfast)}
+                    className="accent-luxury-gold" />
+                  <Coffee size={12} className="text-luxury-gold" /> Breakfast <span className="text-luxury-gold">($8/night)</span>
+                </label>
+              </div>
+
+              {nights > 0 && (includeShuttle || includeBreakfast) && (
+                <div className="border-t border-luxury-border pt-3 mb-3 text-[10px] font-mono text-luxury-slate/70 space-y-1">
+                  {includeShuttle && <div className="flex justify-between"><span>Airport Shuttle</span><span>$15</span></div>}
+                  {includeBreakfast && <div className="flex justify-between"><span>Breakfast × {nights} {nights === 1 ? "night" : "nights"}</span><span>${breakfastTotal}</span></div>}
+                </div>
+              )}
+
+              {nights > 0 && (
+                <div className="border-t-2 border-luxury-gold pt-3 flex justify-between items-center">
+                  <span className="text-[10px] uppercase font-mono tracking-wider text-luxury-gold font-bold">Total Estimate</span>
+                  <span className="font-serif text-2xl font-bold text-luxury-charcoal">${totalEstimate}</span>
+                </div>
+              )}
+            </div>
+
             <div className="flex flex-col">
               <label className="text-[10px] uppercase font-mono tracking-[0.15em] text-[#A69177] font-semibold mb-2">
                 Special Requests (Optional)
@@ -144,6 +216,9 @@ export default function HomePage() {
               <p className="text-luxury-slate italic">
                 "Hello City View Guest House, I am interested in booking the *{selectedRoom}*.
                 {checkIn && <> Check-in: *{checkIn}*, Check-out: *{checkOut}*, Guests: *{guests}*.</>}
+                {nights > 0 && <> Estimated total: *${totalEstimate}*.</>}
+                {includeShuttle && <> Airport shuttle requested.</>}
+                {includeBreakfast && <> Breakfast included.</>}
                 {customRequest && <> Special request: *{customRequest}*.</>} Could you check dates?"
               </p>
             </div>

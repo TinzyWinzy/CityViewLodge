@@ -91,6 +91,32 @@ export default function SuitesPage() {
         </div>
       </section>
 
+      {/* Availability Calendar */}
+      <section className="py-20 px-6 lg:px-16 bg-white border-t border-luxury-border">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-luxury-gold block mb-2 font-bold">Real-Time Availability</span>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold tracking-tight text-luxury-charcoal">Check Live Room Availability</h2>
+            <p className="text-xs text-luxury-slate/60 font-light max-w-lg mx-auto mt-3 leading-relaxed">
+              View current bookings and available dates in real time. Green = available. Busy = booked.
+            </p>
+          </div>
+          <div className="border border-luxury-border overflow-hidden bg-luxury-cream">
+            <iframe
+              src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID_HERE&ctz=Africa%2FHarare&showNav=1&showDate=1&showTabs=0&showCalendars=0&mode=WEEK"
+              width="100%" height="550" style={{ border: 0 }} loading="lazy"
+              title="City View Guest House room availability calendar"
+              className="bg-white"
+            />
+          </div>
+          <div className="mt-4 flex items-center justify-center gap-6 text-[10px] font-mono text-luxury-slate/60">
+            <span className="flex items-center gap-2"><span className="w-3 h-3 bg-green-200 border border-green-400 inline-block" /> Available</span>
+            <span className="flex items-center gap-2"><span className="w-3 h-3 bg-luxury-gold/30 border border-luxury-gold inline-block" /> Limited</span>
+            <span className="flex items-center gap-2"><span className="w-3 h-3 bg-luxury-charcoal/20 border border-luxury-charcoal inline-block" /> Booked</span>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 bg-luxury-charcoal text-center px-6">
         <h2 className="font-serif text-2xl sm:text-3xl text-white font-medium">Not Sure Which Suite Suits You?</h2>
