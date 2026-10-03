@@ -123,8 +123,6 @@ export default function GuestPortalPage() {
                     <h2 className="font-serif text-lg font-medium text-luxury-charcoal">{t("portal.food-title")}</h2>
                     <ul className="mt-2 space-y-1.5">
                       <li className="text-xs text-luxury-slate/80 font-light">{t("portal.food-1")}</li>
-                      <li className="text-xs text-luxury-slate/80 font-light">{t("portal.food-2")}</li>
-                      <li className="text-xs text-luxury-slate/80 font-light">{t("portal.food-3")}</li>
                     </ul>
                   </div>
                 </div>
