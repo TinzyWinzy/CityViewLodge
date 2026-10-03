@@ -25,6 +25,56 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.cityviewguesthouse.co.zw/suites/self-catering-cottage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cityviewguesthouse.co.zw/suites/cbd-room</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cityviewguesthouse.co.zw/suites/africa-room</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cityviewguesthouse.co.zw/suites/focal-point-room</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cityviewguesthouse.co.zw/suites/smart-world-room</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cityviewguesthouse.co.zw/suites/zimbo-room</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cityviewguesthouse.co.zw/suites/hide-out-room</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cityviewguesthouse.co.zw/suites/cool-corn-room</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cityviewguesthouse.co.zw/suites/stop-over-room</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cityviewguesthouse.co.zw/suites/transit-room</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.cityviewguesthouse.co.zw/gallery</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -54,8 +104,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.cityviewguesthouse.co.zw/stay</loc>
+    <loc>https://www.cityviewguesthouse.co.zw/blog/harare-transport-guide</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cityviewguesthouse.co.zw/blog/braeside-neighborhood-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
