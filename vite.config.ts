@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 import {VitePWA} from 'vite-plugin-pwa';
+import {schema} from './src/seo/schema';
 
 export default defineConfig(() => {
   return {
@@ -47,7 +48,16 @@ export default defineConfig(() => {
           },
         ],
       },
-    })],
+    }), {
+      name: 'inject-json-ld',
+      transformIndexHtml: {
+        order: 'post',
+        handler(html: string) {
+          const jsonLd = JSON.stringify(schema).replace(/</g, '\\u003c');
+          return html.replace('</head>', `    <script type="application/ld+json">${jsonLd}</script>\n  </head>`);
+        },
+      },
+    }],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

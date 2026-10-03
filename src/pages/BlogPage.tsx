@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "motion/react";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { BLOG_ARTICLES } from "../guesthouseData";
-import SeoSchema from "../components/SeoSchema";
 import { useLang } from "../components/LanguageContext";
 
 export default function BlogPage() {
@@ -19,7 +18,6 @@ export default function BlogPage() {
         <meta property="og:url" content="https://www.cityviewguesthouse.co.zw/blog" />
         <link rel="canonical" href="https://www.cityviewguesthouse.co.zw/blog" />
       </Helmet>
-      <SeoSchema />
 
       <main className="container mx-auto px-6 lg:px-16 max-w-5xl py-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-16">

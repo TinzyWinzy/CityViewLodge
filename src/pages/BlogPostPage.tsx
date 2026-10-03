@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "motion/react";
 import { Calendar, User, ArrowLeft } from "lucide-react";
 import { BLOG_ARTICLES } from "../guesthouseData";
-import SeoSchema from "../components/SeoSchema";
 
 export default function BlogPostPage() {
   const { id } = useParams<{ id: string }>();
@@ -30,7 +29,6 @@ export default function BlogPostPage() {
         <meta property="og:url" content={`https://www.cityviewguesthouse.co.zw/blog/${article.id}`} />
         <link rel="canonical" href={`https://www.cityviewguesthouse.co.zw/blog/${article.id}`} />
       </Helmet>
-      <SeoSchema />
 
       <main className="container mx-auto px-6 lg:px-16 max-w-3xl py-24">
         <Link to="/blog" className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-luxury-gold hover:text-luxury-charcoal transition-colors mb-12">

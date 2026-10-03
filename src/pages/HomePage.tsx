@@ -11,7 +11,6 @@ import { ROOMS, LIFESTYLE_FEATURES, GENERAL_AMENITIES, REVIEWS } from "../guesth
 import { generateWhatsAppLink } from "../whatsappUtility";
 import Hero from "../components/Hero";
 import { useToast } from "../components/Layout";
-import SeoSchema from "../components/SeoSchema";
 
 export default function HomePage() {
   const { showToast } = useToast();
@@ -92,7 +91,6 @@ export default function HomePage() {
         <meta property="og:description" content="Solar-powered luxury in Braeside, Harare. Secure, quiet, 10 minutes from CBD. Book direct on WhatsApp." />
         <meta property="og:url" content="https://www.cityviewguesthouse.co.zw/" />
       </Helmet>
-      <SeoSchema />
       <Hero />
 
       {/* Booking Form */}

@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { ROOMS, PROPERTY_INFO, REVIEWS, EXTENDED_REVIEWS } from "../guesthouseData";
 
 const ALL_REVIEWS = [...REVIEWS, ...EXTENDED_REVIEWS];
@@ -45,7 +44,7 @@ const reviewSchema = ALL_REVIEWS.map((r) => ({
   "datePublished": r.date
 }));
 
-const schema = {
+export const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -135,11 +134,3 @@ const schema = {
     }
   ]
 };
-
-export default function SeoSchema() {
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
-}
